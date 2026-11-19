@@ -20,6 +20,14 @@ class ContadorPalabras(QtWidgets.QMainWindow):
         
         print("Se ha de presionar el boton")
 
+        CantidadPalabras = len(textoSeparado)
+        self.tvPalabras.setText(f"palabras: {CantidadPalabras}")
+        num_caracteres=len(texto)
+        totalCaracteres = 0
+        for palabras in textoSeparado:
+            totalCaracteres += len(palabras)
+        self.tvCaracteres.setText(f"caracteres: {totalCaracteres}")
+
 # Estas líneas deben ir fuera de la clase (sin espacios a la izquierda):
 app = QtWidgets.QApplication(sys.argv)
 ventana = ContadorPalabras()
